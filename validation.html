@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form validation example</title>
+    <script>
+        function ValidateForm() {
+            //get form inputs
+            var name = document.forms["myForm"]["name"].value;
+            var password = document.forms["myForm"]["password"].value;
+            var confirmPassword = document.forms["myForm"]["confirmPassword"].value;
+            var phoneNumber = document.forms["myForms"]["phoneNumber"].value;
+            var email = document.forms["myForm"]["email"]["email"].value;
+            //Regular expression pattern for validation
+            var namepattern = /^[a-zA-Z]+$/;
+            var phoneNumber = /^\d{10}$/
+            var email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            //validate the inputs
+            if (name == "") {
+                alert("please fill your name***");
+                return false;
+            }
+            if (!name.match(namepattern)) {
+                alert("name must be in alphabet***");
+                return false;
+            }
+            if (password = "") {
+                alert("password must filled");
+                return false;
+            }
+            if (confirmPassword = "") {
+                alert("confirmPassword must filled");
+                return false;
+            }
+            if (phoneNumber = "") {
+                alert("phonenumber must filled");
+                return false;
+            }
+            if (!phoneNumber.match(phoneNumber)) {
+                alert("phone number at leat 10 digit**");
+                return false;
+            }
+
+            if (!email.match(emailpattern)) {
+                alert("email is invalid");
+                return false;
+            }
+
+            if (email = "") {
+                alert("email must filled");
+                return false;
+            }
+            //if all validates pass, form will be passed
+            return true;
+        }
+    </script>
+</head>
+<body>
+    <h2>Form validation </h2>
+    <form name="myForm" onsubmit="return validateForm()" method="post">
+        <label for="name">Name:</label>
+        <input type="text" name="name"><br>
+
+        <label for="password">Password:</label>
+        <input type="password" name="password"><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" name="confirmPassword"><br>
+
+        <label for="phoneNumber">Phone Number</label>
+        <input type = "text" name="phoneNumber"><br>
+
+        <label for="email">Email:</label>
+        <input type="email" name="email"><br>
+
+        <input type="submit" value="submit">
+
+    </form>
+</body>
+
+</html>
